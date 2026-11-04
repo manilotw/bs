@@ -1,11 +1,9 @@
 import logging
-import os
-
-from django.conf import settings
-from django.core.mail import send_mail
 from datetime import datetime, timezone
 from pathlib import Path
 
+from django.conf import settings
+from django.core.mail import send_mail
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.views.decorators.http import require_POST
@@ -32,7 +30,7 @@ SITE = {
     "map_lng": "76.932206",
     "map_zoom": 14,
     # Ключ Яндекс.Карт (необязателен для разработки; для продакшена получите в кабинете разработчика)
-    "yandex_maps_api_key": os.environ.get("YANDEX_MAPS_API_KEY", ""),
+    "yandex_maps_api_key": settings.YANDEX_MAPS_API_KEY,
 }
 
 # Карточки блока «Какие отчёты доступны в нашем сервисе?» (url — карточка-ссылка)

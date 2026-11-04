@@ -1,1 +1,2 @@
 Django==5.1.15
+python-dotenv==1.2.4

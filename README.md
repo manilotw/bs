@@ -7,11 +7,12 @@
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
+cp .env.example .env                        # и впишите DJANGO_SECRET_KEY (команда для генерации — в файле)
 .venv/bin/python manage.py migrate
 .venv/bin/python manage.py runserver        # → http://127.0.0.1:8001
 ```
 
-`runserver` по умолчанию слушает порт **8001** (8000 не занимается). Другой порт: `RUNSERVER_PORT=9000` или `runserver 9000`.
+`runserver` по умолчанию слушает порт **8001** (8000 не занимается). Другой порт: `RUNSERVER_PORT` в `.env` или `runserver 9000`.
 
 Заявки с форм сохраняются в модель `Lead` — смотреть в админке `/admin/` (`manage.py createsuperuser`).
 
@@ -34,20 +35,22 @@ python3 -m venv .venv
 брейкпоинта по центру, `window` — всё окно). Анимации — `data-sbs` (пошаговая по скроллу) и `data-fix`
 («залипание»); как и в оригинале, работают только на ширине от 1200px.
 
-## Переменные окружения
+## Настройки (.env)
 
-| Переменная | По умолчанию | Назначение |
-|---|---|---|
-| `DJANGO_SECRET_KEY` | dev-ключ | обязательно задать в продакшене |
-| `DJANGO_DEBUG` | `1` | `0` в продакшене |
-| `DJANGO_ALLOWED_HOSTS` | `localhost,127.0.0.1` | домены через запятую |
-| `LEAD_NOTIFY_EMAILS` | — | куда дублировать заявки письмом |
-| `EMAIL_BACKEND` | console | бэкенд почты Django |
-| `YANDEX_MAPS_API_KEY` | — | ключ JS API Яндекс.Карт (для продакшена) |
-| `SITE_URL` | `https://buh-service.kz` | адрес сайта для canonical, og-тегов, robots.txt, sitemap.xml |
-| `YANDEX_METRIKA_ID` | `72061132` | Яндекс.Метрика (та же, что была на Tilda) |
-| `FACEBOOK_PIXEL_ID` | `1121663565484331` | Meta Pixel (тот же, что был на Tilda) |
-| `ANALYTICS_ENABLED` | `0` при DEBUG, иначе `1` | включает счётчики; локально выключены |
+Все настройки — в файле `.env` в корне проекта (читается `config/settings.py` через python-dotenv).
+`.env` не коммитится; полный список переменных с пояснениями — в `.env.example`.
+Переменная, заданная в окружении системы, важнее значения из `.env`.
+
+| Группа | Переменные |
+|---|---|
+| Django | `DJANGO_SECRET_KEY` (обязательна), `DJANGO_DEBUG`, `DJANGO_ALLOWED_HOSTS`, `DJANGO_CSRF_TRUSTED_ORIGINS`, `RUNSERVER_PORT`, `TIME_ZONE`, `STATIC_ROOT` |
+| База данных | `DB_ENGINE` (SQLite по умолчанию), `DB_NAME`, `DB_USER`, `DB_PASSWORD`, `DB_HOST`, `DB_PORT`, `DB_CONN_MAX_AGE` |
+| Безопасность (HTTPS) | `SECURE_SSL_REDIRECT`, `SESSION_COOKIE_SECURE`, `CSRF_COOKIE_SECURE`, `SECURE_HSTS_SECONDS`, `USE_X_FORWARDED_PROTO` |
+| Почта и заявки | `LEAD_NOTIFY_EMAILS`, `EMAIL_BACKEND`, `EMAIL_HOST`, `EMAIL_PORT`, `EMAIL_HOST_USER`, `EMAIL_HOST_PASSWORD`, `EMAIL_USE_TLS`, `EMAIL_USE_SSL`, `DEFAULT_FROM_EMAIL` |
+| SEO, аналитика, карты | `SITE_URL`, `YANDEX_METRIKA_ID`, `FACEBOOK_PIXEL_ID`, `ANALYTICS_ENABLED`, `YANDEX_MAPS_API_KEY` |
+
+Для боевого сервера минимум: новый `DJANGO_SECRET_KEY`, `DJANGO_DEBUG=0`,
+`DJANGO_ALLOWED_HOSTS=buh-service.kz,www.buh-service.kz`, `DJANGO_CSRF_TRUSTED_ORIGINS=https://buh-service.kz,https://www.buh-service.kz`.
 
 ## SEO
 Мета-теги (title, description, keywords, og:*, canonical, иконки) перенесены с Tilda без изменений.
