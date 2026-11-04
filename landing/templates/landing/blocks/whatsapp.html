@@ -1,0 +1,36 @@
+{% comment %}
+  Весь блок «залипает» одной сценой на 300px скролла: заголовок — ведущий (top: 90 — сразу под
+  фиксированной шапкой 80px), остальные элементы привязаны к нему через "with".
+{% endcomment %}
+<section id="whatsapp" class="zb"
+         data-artboard='{"1200":{"h":1090,"valign":"center","upscale":"grid"},"960":{"h":750,"valign":"center","upscale":"grid"},"640":{"h":1160,"valign":"center","upscale":"grid"},"480":{"h":1160,"valign":"center","upscale":"grid"},"320":{"h":960,"valign":"center","upscale":"grid"}}'>
+  <div class="zb-ab">
+    <div class="zb-el z-title" data-type="text" data-fix='{"dist":300,"top":90}' data-layout='{"1200":{"t":75,"l":40,"w":660,"ax":"left","ay":"top","c":"grid"},"960":{"t":15,"l":10,"w":630,"ax":"left","ay":"top","c":"grid"},"640":{"t":25,"l":10,"w":630,"ax":"left","ay":"top","c":"grid"},"480":{"t":25,"l":0,"w":470,"ax":"left","ay":"top","c":"grid"},"320":{"t":25,"l":10,"w":310,"ax":"left","ay":"top","c":"grid"}}'>
+      <div class="zb-atom">Спросите в чате WhatsApp</div>
+    </div>
+    <div class="zb-el z-subtitle" data-type="text" data-fix='{"dist":300,"with":"title"}' data-layout='{"1200":{"t":320,"l":50,"w":513,"ax":"left","ay":"top","c":"grid"},"960":{"t":325,"l":10,"w":513,"ax":"left","ay":"top","c":"grid"},"640":{"t":227,"l":10,"w":513,"ax":"left","ay":"top","c":"grid"},"480":{"t":217,"l":10,"w":513,"ax":"left","ay":"top","c":"grid"},"320":{"t":125,"l":10,"w":513,"ax":"left","ay":"top","c":"grid"}}'>
+      <div class="zb-atom">Получайте помощь, предлагайте идеи.</div>
+    </div>
+    <div class="zb-el z-cta" data-type="button" data-fix='{"dist":300,"with":"title"}' data-layout='{"1200":{"t":488,"l":120,"w":540,"h":165,"ax":"left","ay":"top","c":"grid"},"960":{"t":488,"l":10,"w":540,"h":165,"ax":"left","ay":"top","c":"grid"},"640":{"t":970,"l":85,"w":470,"h":125,"ax":"left","ay":"top","c":"grid"},"480":{"t":970,"l":5,"w":470,"h":125,"ax":"left","ay":"top","c":"grid"},"320":{"t":835,"l":30,"w":260,"h":75,"ax":"left","ay":"top","c":"grid"}}'>
+      <a class="zb-atom" href="{{ site.whatsapp_url }}" target="_blank" rel="noopener">Написать в WhatsApp</a>
+    </div>
+    <div class="zb-el z-phone" data-type="shape" data-fix='{"dist":300,"with":"title"}' data-layout='{"1200":{"t":75,"l":775,"w":306,"h":611,"ax":"left","ay":"top","c":"grid"},"960":{"t":75,"l":647,"w":306,"h":611,"ax":"left","ay":"top","c":"grid"},"640":{"t":309,"l":167,"w":306,"h":611,"ax":"left","ay":"top","c":"grid"},"480":{"t":309,"l":87,"w":306,"h":611,"ax":"left","ay":"top","c":"grid"},"320":{"t":175,"l":6,"w":306,"h":611,"ax":"left","ay":"top","c":"grid"}}'>
+      <div class="zb-atom"></div>
+    </div>
+    <div class="zb-el z-msg-answer is-anim-hidden" data-type="button" data-fix='{"dist":300,"with":"title"}' data-sbs='{"event":"scroll","trigger":0.5,"offset":70,"steps":[{"di":"0","mx":"0","my":"0","sx":"1","sy":"1","op":"1","ro":"0","bl":"0","fi":"","dd":"0"},{"di":0,"mx":"0","my":"0","sx":"1","sy":"1","op":0,"ro":"0","bl":"0","fi":"","dd":"0"},{"di":30,"mx":"0","my":"0","sx":"1","sy":"1","op":1,"ro":"0","bl":"0","fi":"","dd":"0"}]}' data-layout='{"1200":{"t":375,"l":810,"w":180,"h":86,"ax":"left","ay":"top","c":"grid"},"960":{"t":294,"l":692,"w":180,"h":86,"ax":"left","ay":"top","c":"grid"},"640":{"t":528,"l":212,"w":180,"h":86,"ax":"left","ay":"top","c":"grid"},"480":{"t":528,"l":132,"w":180,"h":86,"ax":"left","ay":"top","c":"grid"},"320":{"t":394,"l":51,"w":180,"h":86,"ax":"left","ay":"top","c":"grid"}}'>
+      <div class="zb-atom">Можно добавлять несколько компаний, и между ними легко переключаться.</div>
+    </div>
+    <div class="zb-el z-msg-thanks is-anim-hidden" data-type="button" data-fix='{"dist":300,"with":"title"}' data-sbs='{"event":"scroll","trigger":0.5,"offset":70,"steps":[{"di":"0","mx":"0","my":"0","sx":"1","sy":"1","op":"1","ro":"0","bl":"0","fi":"","dd":"0"},{"di":0,"mx":"0","my":"0","sx":"1","sy":"1","op":0,"ro":"0","bl":"0","fi":"","dd":"0"},{"di":30,"mx":"0","my":"0","sx":"1","sy":"1","op":1,"ro":"0","bl":"0","fi":"","dd":"0"}]}' data-layout='{"1200":{"t":475,"l":900,"w":150,"h":36,"ax":"left","ay":"top","c":"grid"},"960":{"t":400,"l":762,"w":150,"h":36,"ax":"left","ay":"top","c":"grid"},"640":{"t":634,"l":282,"w":150,"h":36,"ax":"left","ay":"top","c":"grid"},"480":{"t":634,"l":202,"w":150,"h":36,"ax":"left","ay":"top","c":"grid"},"320":{"t":500,"l":121,"w":150,"h":36,"ax":"left","ay":"top","c":"grid"}}'>
+      <div class="zb-atom">Спасибо за ответ!</div>
+    </div>
+    <div class="zb-el z-msg-welcome is-anim-hidden" data-type="button" data-fix='{"dist":300,"with":"title"}' data-sbs='{"event":"scroll","trigger":0.5,"offset":70,"steps":[{"di":"0","mx":"0","my":"0","sx":"1","sy":"1","op":"1","ro":"0","bl":"0","fi":"","dd":"0"},{"di":0,"mx":"0","my":"0","sx":"1","sy":"1","op":0,"ro":"0","bl":"0","fi":"","dd":"0"},{"di":30,"mx":"0","my":"0","sx":"1","sy":"1","op":1,"ro":"0","bl":"0","fi":"","dd":"0"}]}' data-layout='{"1200":{"t":548,"l":810,"w":130,"h":36,"ax":"left","ay":"top","c":"grid"},"960":{"t":455,"l":692,"w":130,"h":36,"ax":"left","ay":"top","c":"grid"},"640":{"t":689,"l":212,"w":130,"h":36,"ax":"left","ay":"top","c":"grid"},"480":{"t":689,"l":132,"w":130,"h":36,"ax":"left","ay":"top","c":"grid"},"320":{"t":555,"l":51,"w":130,"h":36,"ax":"left","ay":"top","c":"grid"}}'>
+      <div class="zb-atom">Обращайтесь!</div>
+    </div>
+    <div class="zb-el z-msg-question is-anim-hidden" data-type="button" data-fix='{"dist":300,"with":"title"}' data-sbs='{"event":"scroll","trigger":0.5,"offset":70,"steps":[{"di":"0","mx":"0","my":"0","sx":"1","sy":"1","op":"1","ro":"0","bl":"0","fi":"","dd":"0"},{"di":0,"mx":"0","my":"0","sx":"1","sy":"1","op":0,"ro":"0","bl":"0","fi":"","dd":"0"},{"di":30,"mx":"0","my":"0","sx":"1","sy":"1","op":1,"ro":"0","bl":"0","fi":"","dd":"0"}]}' data-layout='{"1200":{"t":260,"l":850,"w":200,"h":86,"ax":"left","ay":"top","c":"grid"},"960":{"t":190,"l":712,"w":200,"h":86,"ax":"left","ay":"top","c":"grid"},"640":{"t":424,"l":232,"w":200,"h":86,"ax":"left","ay":"top","c":"grid"},"480":{"t":424,"l":152,"w":200,"h":86,"ax":"left","ay":"top","c":"grid"},"320":{"t":290,"l":71,"w":200,"h":86,"ax":"left","ay":"top","c":"grid"}}'>
+      <div class="zb-atom">Добрый вечер, а можно автоматизировать отчёты сразу для нескольких компаний?</div>
+    </div>
+    <div class="zb-el z-msg-heart is-anim-hidden" data-type="text" data-fix='{"dist":300,"with":"title"}' data-sbs='{"event":"scroll","trigger":0.5,"offset":30,"steps":[{"di":"0","mx":"0","my":"0","sx":"1","sy":"1","op":"1","ro":"0","bl":"0","fi":"","dd":"0"},{"di":0,"mx":"0","my":"0","sx":"1","sy":"1","op":0,"ro":"0","bl":"0","fi":"","dd":"0"},{"di":30,"mx":"0","my":"0","sx":"1","sy":"1","op":1,"ro":"0","bl":"0","fi":"","dd":"0"}]}' data-layout='{"1200":{"t":525,"l":940,"w":27,"ax":"left","ay":"top","c":"grid"},"960":{"t":507,"l":702,"w":27,"ax":"left","ay":"top","c":"grid"},"640":{"t":741,"l":222,"w":27,"ax":"left","ay":"top","c":"grid"},"480":{"t":741,"l":142,"w":27,"ax":"left","ay":"top","c":"grid"},"320":{"t":607,"l":61,"w":27,"ax":"left","ay":"top","c":"grid"}}'>
+      <div class="zb-atom">❤️</div>
+    </div>
+  </div>
+</section>

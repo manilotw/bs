@@ -1,0 +1,15 @@
+{# Телефон с маской Казахстана: +7 (000) 000-00-00 #}
+<div class="phone-input {{ cls }}">
+  <span class="phone-input__country" aria-hidden="true">
+    <svg class="phone-input__flag" viewBox="0 0 20 14" width="20" height="14">
+      <rect width="20" height="14" fill="#00AFCA"/>
+      <circle cx="10" cy="6.3" r="2.4" fill="#FEC50C"/>
+      <path d="M6.2 9.6c1.3.9 2.5 1.3 3.8 1.3s2.5-.4 3.8-1.3" stroke="#FEC50C" stroke-width=".8" fill="none"/>
+      <rect x="1.4" y="1.2" width=".9" height="11.6" fill="#FEC50C" opacity=".85"/>
+    </svg>
+    <span class="phone-input__caret"></span>
+  </span>
+  <span class="phone-input__code">+7</span>
+  <input class="phone-input__field js-phone" type="tel" name="phone" inputmode="tel" autocomplete="tel-national"
+         placeholder="(000) 000-00-00" {% if required %}data-required{% endif %} data-rule="phone">
+</div>

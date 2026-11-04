@@ -1,0 +1,28 @@
+{% extends "landing/base.html" %}
+
+{% block content %}
+  {% include "landing/partials/header.html" %}
+
+  {# Плашка «Сервисы для бухгалтеров 1С» — только на экранах до 640px #}
+  {% include "landing/blocks/mobile-strip.html" %}
+
+  {% include "landing/blocks/hero.html" %}
+
+  {% include "landing/partials/video_section.html" %}
+
+  {% include "landing/partials/reports.html" %}
+
+  {% include "landing/blocks/pricing.html" %}
+
+  {% include "landing/blocks/steps.html" %}
+
+  {% include "landing/blocks/whatsapp.html" %}
+
+  {% include "landing/partials/contacts.html" %}
+
+  {% include "landing/partials/footer.html" %}
+{% endblock %}
+
+{% block popups %}
+  {% include "landing/partials/popups.html" %}
+{% endblock %}

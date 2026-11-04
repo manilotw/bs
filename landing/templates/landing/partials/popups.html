@@ -1,0 +1,84 @@
+{% comment %}
+  Попапы. Открываются ссылками:
+    #popupzero-mywindow — синяя карточка с формой (кнопки «Начать использовать», «Подключить сервис», карточка «Попробуйте!»)
+    #popup:myform       — белый попап с формой (мобильная кнопка «Подключить сервис»)
+    #popup:myform1      — «30 дней бесплатного использования» (в оригинале ни на что не привязан)
+{% endcomment %}
+
+<div class="popup popup--zero" data-popup-hook="#popupzero-mywindow" role="dialog" aria-modal="true"
+     aria-label="Для подключения сервиса в вашу 1С укажите свои данные" tabindex="-1">
+  {% include "landing/partials/popup_close.html" %}
+  <div class="popup__container popup__container--full">
+    {% include "landing/blocks/signup.html" %}
+  </div>
+</div>
+
+<div class="popup popup--form" data-popup-hook="#popup:myform" role="dialog" aria-modal="true"
+     aria-labelledby="popup-myform-title" tabindex="-1">
+  {% include "landing/partials/popup_close.html" %}
+  <div class="popup__container popup__container--w6">
+    <div class="popup-form">
+      <div class="popup-form__text">
+        <div class="popup-form__title" id="popup-myform-title">Для подключения сервиса в вашу 1С укажите свои данные</div>
+      </div>
+      <form class="lead-form js-lead-form" action="{% url 'landing:lead' %}" method="post" novalidate>
+        {% csrf_token %}
+        <input type="hidden" name="form" value="myform">
+        <div class="lead-form__success js-form-success" aria-live="polite" hidden>Спасибо! Данные успешно отправлены.</div>
+        <div class="lead-form__inputs js-form-inputs">
+          <div class="lead-form__group">
+            <input class="lead-form__input" type="email" name="email" placeholder="E-mail" autocomplete="email"
+                   data-required data-rule="email">
+            <div class="lead-form__error" aria-live="polite"></div>
+          </div>
+          <div class="lead-form__group">
+            <input class="lead-form__input" type="text" name="name" placeholder="Введите имя" autocomplete="name"
+                   data-required data-rule="name">
+            <div class="lead-form__error" aria-live="polite"></div>
+          </div>
+          <div class="lead-form__group">
+            {% include "landing/partials/phone_input.html" with cls="lead-form__input" required=True %}
+            <div class="lead-form__error" aria-live="polite"></div>
+          </div>
+          <div class="lead-form__errorbox js-form-errorbox" hidden></div>
+          <div class="lead-form__submit-wrap">
+            <button type="submit" class="lead-form__submit">Отправить</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="popup popup--form" data-popup-hook="#popup:myform1" role="dialog" aria-modal="true"
+     aria-labelledby="popup-myform1-title" tabindex="-1">
+  {% include "landing/partials/popup_close.html" %}
+  <div class="popup__container popup__container--w6">
+    <div class="popup-form">
+      <div class="popup-form__text">
+        <div class="popup-form__title" id="popup-myform1-title">Получите 30 дней бесплатного использования</div>
+        <div class="popup-form__descr">если оставите заявку прямо сейчас (*актуально для новых пользователей сервиса)</div>
+      </div>
+      <form class="lead-form js-lead-form" action="{% url 'landing:lead' %}" method="post" novalidate>
+        {% csrf_token %}
+        <input type="hidden" name="form" value="trial">
+        <div class="lead-form__success js-form-success" aria-live="polite" hidden>Спасибо, Ваши данные успешно отправвленны</div>
+        <div class="lead-form__inputs js-form-inputs">
+          <div class="lead-form__group">
+            <input class="lead-form__input" type="text" name="name" placeholder="Ваше имя" autocomplete="name"
+                   data-rule="name">
+            <div class="lead-form__error" aria-live="polite"></div>
+          </div>
+          <div class="lead-form__group">
+            {% include "landing/partials/phone_input.html" with cls="lead-form__input" required=True %}
+            <div class="lead-form__error" aria-live="polite"></div>
+          </div>
+          <div class="lead-form__errorbox js-form-errorbox" hidden></div>
+          <div class="lead-form__submit-wrap">
+            <button type="submit" class="lead-form__submit">Отправить</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

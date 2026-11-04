@@ -1,0 +1,22 @@
+{# Форма внутри синей карточки попапа #popupzero-mywindow #}
+<form class="zform js-lead-form" action="{% url 'landing:lead' %}" method="post" novalidate data-close-on-success>
+  {% csrf_token %}
+  <input type="hidden" name="form" value="signup">
+  <div class="zform__success js-form-success" aria-live="polite" hidden>Спасибо! Данные успешно отправлены.</div>
+  <div class="js-form-inputs">
+    <div class="zform__group">
+      <input class="zform__input" type="text" name="name" placeholder="ФИО" autocomplete="name" data-required data-rule="name">
+      <div class="zform__error" aria-live="polite"></div>
+    </div>
+    <div class="zform__group">
+      {% include "landing/partials/phone_input.html" with cls="zform__input" required=True %}
+      <div class="zform__error" aria-live="polite"></div>
+    </div>
+    <div class="zform__group">
+      <input class="zform__input" type="email" name="email" placeholder="E-mail" autocomplete="email" data-required data-rule="email">
+      <div class="zform__error" aria-live="polite"></div>
+    </div>
+    <div class="zform__errorbox js-form-errorbox" hidden></div>
+    <button type="submit" class="zform__submit">Отправить</button>
+  </div>
+</form>

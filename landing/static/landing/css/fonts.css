@@ -1,0 +1,40 @@
+/* Futura PT (ParaType) */
+@font-face {
+  font-family: 'FuturaPT';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/FuturaPT-300.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'FuturaPT';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/FuturaPT-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'FuturaPT';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/FuturaPT-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'FuturaPT';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/FuturaPT-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'FuturaPT';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/FuturaPT-700.woff2') format('woff2');
+}

@@ -1,0 +1,40 @@
+<section class="reports" id="reports">
+  <div class="container">
+    <h2 class="section-title">Какие отчёты доступны <br>в нашем сервисе? (краткий список)</h2>
+  </div>
+
+  <ul class="reports__grid container">
+    {% for row in report_rows %}
+      {% for card in row %}
+        <li class="reports__col">
+          <div class="card">
+            <div class="card__wrap">
+              {% if card.url %}
+                <a href="{{ card.url }}" class="card__link" target="_blank" rel="noopener">
+                  <div class="card__descr">{{ card.text }}</div>
+                </a>
+              {% else %}
+                <div class="card__descr">{{ card.text }}</div>
+              {% endif %}
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+
+      {% if forloop.last %}
+        <li class="reports__col">
+          <a href="#popupzero-mywindow" class="card card--cta">
+            <div class="card__wrap">
+              <div class="card__title">И другие отчеты и обработки.<br><br>Попробуйте!</div>
+              <div class="card__btn-container">
+                <span class="card__btn-text">Хочу попробовать бесплатно</span>
+              </div>
+            </div>
+          </a>
+        </li>
+      {% else %}
+        <li class="reports__separator" aria-hidden="true"></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</section>

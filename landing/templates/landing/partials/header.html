@@ -1,0 +1,19 @@
+{% load static %}
+<div class="header-rec">
+  <header class="site-header" id="site-header">
+    <div class="site-header__bar">
+      <div class="site-header__pad"></div>
+      <div class="site-header__left">
+        <a href="/" class="site-header__logo-link">
+          <img class="site-header__logo" src="{% static 'landing/img/logo.png' %}" width="300" height="42"
+               alt="Buh-service: удобные отчёты">
+        </a>
+      </div>
+      <div class="site-header__center"></div>
+      <div class="site-header__right">
+        <a href="tel:{{ site.phone_header_href }}" class="btn btn--header">Связаться с нами</a>
+      </div>
+      <div class="site-header__pad"></div>
+    </div>
+  </header>
+</div>
